@@ -1,4 +1,5 @@
 require_relative '../lib/chads_mohawk.rb'
+require 'pry'
 
 describe ChadsMohawk do
   it "is sane" do
@@ -117,5 +118,11 @@ describe ChadsMohawk, "winning" do
     end
   end
 
-
+  context "when the winning spot is (-20, 20)" do
+    it "wins in 1680 moves" do
+      ChadsMohawk.stub(:win?).and_return(false)
+      ChadsMohawk.stub(:win?).with([-20,20]).and_return(true)
+      ChadsMohawk.play!.should eql 1680 #WTF?
+    end
+  end
 end
