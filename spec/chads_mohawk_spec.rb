@@ -122,7 +122,7 @@ describe ChadsMohawk, "winning" do
     it "wins in 1680 moves" do
       ChadsMohawk.stub(:win?).and_return(false)
       ChadsMohawk.stub(:win?).with([-20,20]).and_return(true)
-      ChadsMohawk.play!.should eql 1680 #WTF?
+      ChadsMohawk.play!.should eql 1680
     end
   end
 end
