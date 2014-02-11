@@ -20,7 +20,6 @@ class ChadsMohawk
     while not win?(self.position)
       move
     end
-
     self.move_count
   end
 
@@ -45,12 +44,9 @@ class ChadsMohawk
       self.position[1] += 1
     end
     self.move_count += 1
-    #$stdout << "move count: #{self.move_count}, position = #{self.position.inspect}, orientation = #{self.orientation}, winner = #{self.winning_space.inspect}\n"
   end
 
   def self.win?(coordinates)
-    store = PStore.new(PSTORE_FILENAME)
-    winning_space = store.transaction { store[:winning_space] }
     coordinates == winning_space
   end
 
@@ -71,7 +67,6 @@ class ChadsMohawk
   end
 
   private
-
 
   def self.reset_position
     self.position = [0,0]
