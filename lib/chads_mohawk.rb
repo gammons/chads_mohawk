@@ -4,7 +4,6 @@ class ChadsMohawk
   PSTORE_FILENAME = "mohawk.pstore"
   Orientations = [:north, :west, :south, :east]
 
-
   class << self
     attr_accessor :position
     attr_accessor :orientation
